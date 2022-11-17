@@ -11,7 +11,12 @@ public class Server {
         if (guest.getSobriety() >= 50) {
             return true;
         }
-        if (guest.)
+        if (guest.getIsBanned() == false) {
+            return true;
+        }
+        if (guest.getCurrency() == '£') {
+            return true;
+        }
 
         return false;
     }

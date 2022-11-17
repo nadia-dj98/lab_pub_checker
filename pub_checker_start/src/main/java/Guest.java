@@ -57,12 +57,12 @@ public class Guest {
         this.sobriety = sobriety;
     }
 
-    public boolean isBanned() {
-        return true;
+    public boolean getIsBanned() {
+        return banned;
     }
 
-    public void setNotBanned(boolean banned) {
-        this.banned = false;
+    public void setBanned(boolean banned) {
+        this.banned = banned;
     }
 
     public char getCurrency() {

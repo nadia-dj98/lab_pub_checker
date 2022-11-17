@@ -58,14 +58,14 @@ public class ServerTest {
 
         @Test
         public void isSoberEnough() {
-            guest.setSobriety(10);
+            guest.setSobriety(100);
             boolean result = server.canServeGuest(guest);
             assertThat(result).isEqualTo(true);
         }
     // TODO: test that guest can only get served if guest is not banned from the pub
         @Test
         public void isNotBanned() {
-            guest.setNotBanned(true);
+            guest.setBanned(false);
             boolean result = server.canServeGuest(guest);
             assertThat(result).isEqualTo(true);
         }
@@ -73,6 +73,13 @@ public class ServerTest {
 
 
     // TODO: test that guest can only get served if guest can pay in local currency (add £ char as currency)
+       @Test
+        public void correctCurrency() {
+        guest.setCurrency('£');
+        boolean result = server.canServeGuest(guest);
+        assertThat(result).isEqualTo(true);
+        }
+
 
     // EXTENSIONS
 
